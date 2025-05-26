@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OpenOMEN – Power Up Linux</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <header>
+        <h1>OpenOMEN</h1>
+        <p>Unofficial driver and daemon for HP OMEN hardware on Debian based Linux Distro's</p>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#features">Features</a>
+            <a href="#install">Installation</a>
+            <a href="#status">Status</a>
+            <a href="https://github.com/OpenOMENapp/openomen" target="_blank">GitHub</a>
+            <a href="https://github.com/openomen/openomen/wiki" target="_blank">Wiki</a>
+        </nav>
+    </header>
+
+    <section class="section" id="about">
+        <h2>Why OpenOMEN?</h2>
+        <p>
+            HP OMEN systems are packed with power — but on Linux, they're often locked behind Windows-only tools like
+            OMEN Hub.
+            <strong>OpenOMEN</strong> unleashes the full potential of your OMEN hardware on Ubuntu and other Debian
+            based Linux
+            distributions.
+            Whether you want full fan control, boost modes, thermal stats, or performance profiles — OpenOMEN has you
+            covered.
+        </p>
+    </section>
+
+    <section class="section" id="features">
+        <h2>Features</h2>
+
+        <div class="card">
+            <h3>🌀 Fan Control</h3>
+            <p>Manual fan speed tuning and automated fan curves, including "FanBoost" mode for max cooling on demand.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🛠️ Daemon-Based Architecture</h3>
+            <p>Low-resource background service manages settings persistently, even after reboot.</p>
+        </div>
+
+        <div class="card">
+            <h3>🎨 RGB Support (Coming Soon)</h3>
+            <p>Control keyboard and chassis lighting on supported OMEN models <em><strong>AND</strong> some</em> Victus
+                models with RGB keyboards.</p>
+        </div>
+
+        <div class="card">
+            <h3>⚡ Performance Profiles (Coming Soon)</h3>
+            <p>Switch between performance, balanced, and power-saving modes — for CPU and GPU — on the fly.</p>
+        </div>
+
+    </section>
+
+    <section class="section" id="install">
+        <h2>Installation</h2>
+        <p>Ubuntu 22.04+ is currently supported.</p>
+        <div class="card">
+            <h3>📦 Installation & Usage</h3>
+            <p>View the full instructions on our GitHub Wiki:</p>
+            <a href="https://github.com/openomen/openomen/wiki/%F0%9F%93%A6-Installation-&-Usage" target="_blank" style="
+    display: inline-block;
+    background: #e50914;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    font-weight: bold;
+    border-radius: 6px;
+    text-decoration: none;
+    box-shadow: 0 0 10px rgba(229, 9, 20, 0.4);
+    margin-top: 0.5rem;
+  ">Open Installation Guide</a>
+        </div>
+
+        <p>Refer to the <a href="https://github.com/openomen/openomen/wiki">Wiki</a> for detailed instructions,
+            config options, and troubleshooting tips.</p>
+    </section>
+
+    <section class="section" id="status">
+        <h2>Project Status</h2>
+        <div class="card">
+            <h3>Latest Stable</h3>
+            <p><span class="badge">v0.1.0</span> – Basic fan control working on a Victus 15.</p>
+        </div>
+        <div class="card">
+            <h3>Next Milestone</h3>
+            <p>RGB lighting control & GUI configuration tool.</p>
+        </div>
+    </section>
+
+    <div class="footer">
+        &copy; 2025 OpenOMEN • Not affiliated with HP • Made with ❤️ for Linux
+    </div>
+
+</body>
+
+</html>
