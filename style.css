@@ -156,7 +156,8 @@ nav a:hover {
 .device-card img {
   width: 100%;
   height: auto;
-  max-height: 200px;
+  max-height: 250px; /* increased from 200px */
+  min-height: 180px; /* added to keep some consistency */
   object-fit: contain;
   border-radius: 8px;
   margin-bottom: 1rem;
