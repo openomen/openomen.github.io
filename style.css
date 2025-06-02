@@ -147,7 +147,7 @@ nav a:hover {
 
 .device-card img {
   max-width: 100%;
-  height: auto;
+  /* height: auto; */
   border-radius: 8px;
   margin-bottom: 1rem;
 }
@@ -230,4 +230,10 @@ nav a:hover {
   .device-card {
     flex: 1 1 100%;
   }
+}
+
+/* supported devices */
+.omen-x-2s{
+  height:56%;
+  width: auto;
 }
