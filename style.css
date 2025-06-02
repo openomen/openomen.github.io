@@ -1,3 +1,4 @@
+/* Root variables for consistent theming */
 :root {
   --bg-color: #0a0a0a;
   --text-color: #eaeaea;
@@ -7,6 +8,7 @@
   --border: #2c2c2c;
 }
 
+/* Base styles */
 body {
   margin: 0;
   background-color: var(--bg-color);
@@ -15,6 +17,7 @@ body {
   line-height: 1.6;
 }
 
+/* Header styles */
 header {
   background: linear-gradient(to right, #1c1c1c, #0a0a0a);
   padding: 2rem 3rem;
@@ -34,6 +37,7 @@ header p {
   color: #aaa;
 }
 
+/* Navigation bar */
 nav {
   display: flex;
   justify-content: center;
@@ -54,22 +58,18 @@ nav a:hover {
   border-bottom: 2px solid var(--accent-red);
 }
 
+/* Feature section */
 #features {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  /* Two cards per row */
   gap: 20px;
-  /* Space between cards */
   max-width: 800px;
-  /* Container width */
   margin: 0 auto;
-  /* Center the section horizontally */
   padding: 20px;
 }
 
 #features h2 {
   grid-column: 1 / -1;
-  /* Make h2 span both columns */
   text-align: center;
   margin-bottom: 1.5rem;
 }
@@ -82,6 +82,7 @@ nav a:hover {
   box-shadow: 0 0 10px rgba(229, 9, 20, 0.2);
 }
 
+/* General section layout */
 .section {
   max-width: 900px;
   margin: 3rem auto;
@@ -95,6 +96,7 @@ nav a:hover {
   margin-bottom: 1rem;
 }
 
+/* Card component */
 .card {
   background-color: var(--card-bg);
   border: 1px solid var(--border);
@@ -109,6 +111,7 @@ nav a:hover {
   color: var(--accent-red);
 }
 
+/* Footer */
 .footer {
   text-align: center;
   padding: 2rem;
@@ -118,6 +121,7 @@ nav a:hover {
   margin-top: 4rem;
 }
 
+/* Badge styling */
 .badge {
   display: inline-block;
   background: var(--accent-red);
@@ -128,26 +132,32 @@ nav a:hover {
   margin-left: 0.5rem;
 }
 
+/* Device grid section */
 .device-grid {
-  display: flex;
-  /* flex-wrap: wrap; */
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
+  justify-content: center;
   margin-top: 2rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .device-card {
   background: #1c1c1c;
   padding: 1.5rem;
-  flex: 0 1 calc(50% - 2rem);
   border-radius: 12px;
   box-shadow: 0 0 12px rgba(229, 9, 20, 0.2);
   text-align: center;
 }
 
+/* Ensure consistent image sizing and prevent cropping */
 .device-card img {
-  max-width: 100%;
-  /* height: auto; */
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: contain;
   border-radius: 8px;
   margin-bottom: 1rem;
 }
@@ -164,7 +174,7 @@ nav a:hover {
   font-size: 0.95rem;
 }
 
-/* 🔽 MOBILE RESPONSIVE STYLES */
+/* Responsive design adjustments */
 @media (max-width: 768px) {
   header {
     padding: 1.5rem 1rem;
@@ -189,10 +199,8 @@ nav a:hover {
     padding: 0 1rem;
   }
 
-  /* Make #features cards stack vertically on small screens */
   #features {
     grid-template-columns: 1fr;
-    /* Single column */
     padding: 1rem;
   }
 
@@ -227,13 +235,8 @@ nav a:hover {
     box-sizing: border-box;
   }
 
-  .device-card {
-    flex: 1 1 100%;
+  .device-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
-}
-
-/* supported devices */
-.omen-x-2s{
-  height:56%;
-  width: auto;
 }
