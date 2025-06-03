@@ -135,7 +135,7 @@ nav a:hover {
 /* Device grid section */
 .device-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   justify-content: center;
   margin-top: 2rem;
@@ -156,8 +156,7 @@ nav a:hover {
 .device-card img {
   width: 100%;
   height: auto;
-  max-height: 250px; /* increased from 200px */
-  min-height: 180px; /* added to keep some consistency */
+  max-height: 200px;
   object-fit: contain;
   border-radius: 8px;
   margin-bottom: 1rem;
