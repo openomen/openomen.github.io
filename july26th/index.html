@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OpenOMEN – Going Open Source</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="../logo.png" type="image/png">
+
+    <meta name="description" content="OpenOMEN is going fully open-source under GPL-3.0. Countdown to the big day.">
+    <meta property="og:title" content="OpenOMEN – Going Open Source" />
+    <meta property="og:description" content="Countdown to OpenOMEN going 100% open-source under GPL-3.0." />
+    <meta property="og:image" content="https://openomen.github.io/logo.png" />
+    <meta property="og:url" content="https://openomen.github.io/july26th" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#e50914">
+</head>
+
+<body>
+
+    <header>
+        <h1>OpenOMEN</h1>
+        <p>Unofficial driver and daemon for HP OMEN hardware on any Linux Distro's.</p>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/#about">About</a>
+            <a href="/#devices">Supported Devices</a>
+            <a href="/#features">Features</a>
+            <a href="/#install">Installation</a>
+            <a href="https://github.com/openomen/openomen" target="_blank">GitHub</a>
+            <a href="https://github.com/openomen/openomen/wiki" target="_blank">Wiki</a>
+            <a href="https://discord.gg/UHQ5cztbUj" target="_blank">Discord</a>
+        </nav>
+    </header>
+
+    <section class="section" id="countdown-section">
+        <h2 id="headline">Big news for OpenOMEN drops in:</h2>
+
+        <div class="card" id="countdown-card">
+            <!-- <p id="countdown-sub">Big news for OpenOMEN drops in:</p> -->
+
+            <div class="countdown-grid" id="countdown-grid">
+                <div class="countdown-block">
+                    <span class="countdown-number" id="days">00</span>
+                    <span class="countdown-label">Days</span>
+                </div>
+                <div class="countdown-block">
+                    <span class="countdown-number" id="hours">00</span>
+                    <span class="countdown-label">Hours</span>
+                </div>
+                <div class="countdown-block">
+                    <span class="countdown-number" id="minutes">00</span>
+                    <span class="countdown-label">Minutes</span>
+                </div>
+                <div class="countdown-block">
+                    <span class="countdown-number" id="seconds">00</span>
+                    <span class="countdown-label">Seconds</span>
+                </div>
+            </div>
+
+            <p class="countdown-target">Target: July 26th, 15:00 (3:00 PM) CEST</p>
+        </div>
+
+        <div class="card" id="reveal-card" style="display:none;">
+            <p id="reveal-text"></p>
+        </div>
+    </section>
+
+    <div class="footer">
+        &copy; 2026 OpenOMEN • Not affiliated with HP • Made with ❤️ for Linux • Made by audixdev (quin)
+    </div>
+
+    <script>
+        // July 26th 15:00 CEST = July 26th 13:00 UTC (CEST is UTC+2)
+        const targetDate = new Date("2026-07-26T13:00:00Z").getTime();
+
+        function pad(n) {
+            return String(n).padStart(2, "0");
+        }
+
+        let revealed = false;
+
+        async function showReveal() {
+            if (revealed) return;
+            revealed = true;
+
+            document.getElementById("countdown-card").style.display = "none";
+            document.getElementById("headline").textContent = "The Wait Is Over";
+            const revealCard = document.getElementById("reveal-card");
+            const revealParagraph = document.getElementById("reveal-text");
+
+            try {
+                const res = await fetch("./reveal.json", { cache: "no-store" });
+                const data = await res.json();
+                const text = atob(data.b64);
+                revealParagraph.innerHTML = text.split("\n\n").map(p => `<p>${p}</p>`).join("");
+            } catch (e) {
+                revealParagraph.innerHTML = "<p>Something went wrong loading the announcement. Please refresh or check the Discord.</p>";
+            }
+
+            revealCard.style.display = "block";
+        }
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance <= 0) {
+                showReveal();
+                clearInterval(timer);
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").textContent = pad(days);
+            document.getElementById("hours").textContent = pad(hours);
+            document.getElementById("minutes").textContent = pad(minutes);
+            document.getElementById("seconds").textContent = pad(seconds);
+        }
+
+        updateCountdown();
+        const timer = setInterval(updateCountdown, 1000);
+    </script>
+
+</body>
+
+</html>
