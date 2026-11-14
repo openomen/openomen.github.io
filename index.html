@@ -4,8 +4,11 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>OpenOMEN – Power Up Linux</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto&display=swap" rel="stylesheet">
+    <script>document.documentElement.classList.add('js');</script>
+    <title>OpenOMEN – OMEN Hub, minus Windows</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=Martian+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="logo.png" type="image/png">
 
@@ -25,7 +28,7 @@
     <meta name="twitter:description"
         content="Unofficial driver and daemon for HP OMEN hardware on any Linux Distro's.">
     <meta name="twitter:image" content="logo.png">
-    <meta name="theme-color" content="#e50914">
+    <meta name="theme-color" content="#ef3b2d">
     <link rel="apple-touch-icon" href="logo.png">
     <link rel="icon" type="image/png" sizes="32x32" href="logo.png">
     <link rel="icon" type="image/png" sizes="16x16" href="logo.png">
@@ -36,131 +39,267 @@
 
 <body>
 
-    <header>
-        <h1>OpenOMEN</h1>
-        <p>Unofficial driver and daemon for HP OMEN hardware on any Linux Distro's.</p>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#devices">Supported Devices</a>
-            <a href="#features">Features</a>
-            <a href="#install">Installation</a>
-            <a href="#status">Status</a>
-            <a href="https://github.com/openomen/openomen" target="_blank">GitHub</a>
-            <a href="https://github.com/openomen/openomen/wiki" target="_blank">Wiki</a>
-            <a href="https://discord.gg/UHQ5cztbUj" target="_blank">Discord</a>
+    <header class="wrap site-header">
+        <a class="brand" href="#top"><img class="brand-logo" src="logo.png" alt="OpenOMEN Logo" width="36" height="36" />OpenOMEN</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Menu">
+            <span class="nav-toggle-bars" aria-hidden="true"></span>
+        </button>
+        <nav class="nav" id="primary-nav" aria-label="Primary">
+            <a href="#commands">What it does</a>
+            <a href="#install">Install</a>
+            <a href="#devices">Laptops</a>
+            <a href="#community">Community</a>
+            <a href="https://github.com/openomen/openomen" target="_blank" rel="noopener">GitHub</a>
         </nav>
     </header>
 
-    <section class="section" id="about">
-        <h2>Why OpenOMEN?</h2>
-        <p>
-            HP OMEN systems are packed with power — but on Linux, they're often locked behind Windows-only tools like
-            OMEN Hub.
-            <strong>OpenOMEN</strong> unleashes the full potential of your OMEN hardware on Ubuntu and other Linux
-            distributions.
-            Whether you want full fan control, boost modes, thermal stats, or performance profiles — OpenOMEN will have you
-            covered.
-        </p>
-    </section>
-
-    <section class="section" id="devices">
-        <h2>Supported Devices</h2>
-        <p>OpenOMEN supports a growing number of HP OMEN and Victus devices. Below are confirmed compatible systems:</p>
-
-        <div class="device-grid">
-            <div class="device-card">
-                <img class="victus-15-2022" src="assets/supported-devices/HP-Victus-15-2022.png" alt="HP Victus 15 (2022)" />
-                <h3>HP Victus 15 (2022)</h3>
-                <p>✔️ Fully supported: fan control, thermal stats, and partial RGB support for models with RGB keyboards. Daemon support
-                    tested on Ubuntu 22.04+.</p>
+    <main>
+        <section class="wrap hero" id="top">
+            <h1>OMEN Hub, minus Windows.</h1>
+            <div class="hero-body">
+                <div class="hero-copy">
+                    <p class="lede">OpenOMEN is an unofficial, community-maintained command-line tool for HP OMEN and Victus laptops on Linux. Set fan modes and power profiles, and watch CPU and GPU stats, from your terminal.</p>
+                    <div class="actions">
+                        <a class="btn btn-red" href="https://github.com/openomen/openomen/releases/tag/CLI_0.4.3" target="_blank" rel="noopener">Download v0.4.3</a>
+                        <a class="btn btn-line" href="https://discord.gg/UHQ5cztbUj" target="_blank" rel="noopener">Join the Discord</a>
+                        <a href="#install" style="font-weight:500">How to install</a>
+                    </div>
+                </div>
+                <dl class="facts">
+                    <div><dt>Latest release</dt><dd>v0.4.3, 14 Nov 2026</dd></div>
+                    <div><dt>Works on</dt><dd>8 OMEN and Victus models</dd></div>
+                    <div><dt>Tested on</dt><dd>Arch, NixOS, Ubuntu, CachyOS</dd></div>
+                    <div><dt>Written in</dt><dd>Python</dd></div>
+                    <div><dt>License</dt><dd>GPL-3.0</dd></div>
+                </dl>
             </div>
+        </section>
 
-            <div class="device-card">
-                <img class="omen-x-2s" src="assets/supported-devices/HP-omen-x-2s.png" alt="HP OMEN X 2S" />
-                <h3>HP OMEN X 2S</h3>
-                <p>✔️ Fully supported: fan control, thermal stats with RGB and performance profile
-                    support coming soon.</p>
+        <section class="band" id="commands">
+            <div class="wrap">
+                <h2>Fans, power profiles and stats, from one command.</h2>
+                <div>
+            <div class="command">
+                <h3>Fan control</h3>
+                <div class="command-body">
+                    <p>Run the fans at maximum RPM, hand them back to the BIOS, or flip between the two.</p>
+                    <code class="cmd">openomen fan max | auto | toggle | status</code>
+                </div>
             </div>
-
-            <div class="device-card">
-                <img class="omen-x-2s" src="assets/supported-devices/hp-omen-16.png" alt="HP OMEN 16" />
-                <h3>HP OMEN 16 </h3>
-                <p>✔️ Fully supported: fan control, thermal stats with RGB and performance profile
-                    support coming soon.</p>
+            <div class="command">
+                <h3>Power profiles</h3>
+                <div class="command-body">
+                    <p>Gaming, balanced and quiet each set the power profile and the fan mode together. You can also set a single ACPI profile.</p>
+                    <code class="cmd">openomen power apply gaming | balanced | quiet</code>
+                    <code class="cmd">openomen power list | set &lt;profile&gt;</code>
+                </div>
             </div>
-
-            <div class="device-card">
-                <img class="omen-x-2s" src="assets/supported-devices/hp-omen-17.png" alt="HP OMEN 17" />
-                <h3>HP OMEN 17</h3>
-                <p>✔️ Fully supported: fan control, thermal stats with RGB and performance profile
-                    support coming soon.</p>
+            <div class="command">
+                <h3>Live stats</h3>
+                <div class="command-body">
+                    <p>CPU temperature, per-core usage and frequency, GPU details, fan RPM and the active power profile. Add -w to refresh every 1.5 seconds.</p>
+                    <code class="cmd">openomen stats -w</code>
+                    <code class="cmd">openomen cpu | gpu</code>
+                </div>
             </div>
+            <div class="command">
+                <h3>Doctor</h3>
+                <div class="command-body">
+                    <p>Checks hardware compatibility and driver status, so you know what works on your laptop before you change anything.</p>
+                    <code class="cmd">openomen doctor</code>
+                </div>
+            </div>
+            <div class="command">
+                <h3>Updates</h3>
+                <div class="command-body">
+                    <p>The binary updates itself in place.</p>
+                    <code class="cmd">openomen update</code>
+                </div>
+            </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="wrap install" id="install">
+            <div class="install-intro">
+                <h2>Install it in three steps.</h2>
+                <p>One binary, no package manager needed. The wiki has the full steps for each distro.</p>
+                <div class="links">
+                    <a class="strong-link" href="https://github.com/openomen/openomen/wiki/%F0%9F%93%A6-Installation-&-Usage" target="_blank" rel="noopener">Open the install guide</a>
+                    <a class="strong-link" href="https://github.com/openomen/openomen/releases" target="_blank" rel="noopener">All releases</a>
+                </div>
+            </div>
+            <ol class="steps">
+                <li>
+                    <span class="step-num">1</span>
+                    <div class="step-body"><div class="step-title">Download the binary</div><div class="step-hint">Get openomen from the latest release.</div></div>
+                </li>
+                <li>
+                    <span class="step-num">2</span>
+                    <div class="step-body"><div class="step-title">Put it on your PATH</div>
+<pre>sudo mv openomen /usr/local/bin/
+sudo chmod +x /usr/local/bin/openomen</pre></div>
+                </li>
+                <li>
+                    <span class="step-num">3</span>
+                    <div class="step-body"><div class="step-title">Check it works</div>
+<pre>openomen --version</pre></div>
+                </li>
+            </ol>
+        </section>
+
+        <section class="band" id="devices">
+            <div class="wrap">
+                <h2>Laptops confirmed working.</h2>
+                <p class="section-note">Other OMEN and Victus models may work too, since many share similar controllers, but that isn't guaranteed. Run openomen doctor to check yours.</p>
+
+                <div class="device-grid">
+                <figure class="device-card">
+                    <img src="assets/supported-devices/HP-Victus-15-2022.png" alt="HP Victus 15 (2022)" loading="lazy" />
+                    <figcaption>HP Victus 15 (2022)</figcaption>
+                </figure>
+                <figure class="device-card">
+                    <img src="assets/supported-devices/HP-omen-x-2s.png" alt="HP OMEN X 2S" loading="lazy" />
+                    <figcaption>HP OMEN X 2S</figcaption>
+                </figure>
+                <figure class="device-card">
+                    <img src="assets/supported-devices/hp-omen-16.png" alt="HP OMEN 16" loading="lazy" />
+                    <figcaption>HP OMEN 16</figcaption>
+                </figure>
+                <figure class="device-card">
+                    <img src="assets/supported-devices/hp-omen-17.png" alt="HP OMEN 17" loading="lazy" />
+                    <figcaption>HP OMEN 17</figcaption>
+                </figure>
+                </div>
+
+                <div class="table-scroll">
+                    <table class="models">
+                        <caption>Laptop models confirmed working with OpenOMEN</caption>
+                        <thead>
+                            <tr><th scope="col">Model</th><th scope="col">Variant</th><th scope="col">Status</th><th scope="col">Since</th></tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row">Victus 17</th>
+                            <td class="mono">17z-db100</td>
+                            <td><span class="status"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9.5l4 4 8-9" fill="none" stroke="#FFB01F" stroke-width="2.4" stroke-linecap="square"/></svg>Confirmed</span></td>
+                            <td class="mono">v0.1</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Victus 16</th>
+                            <td class="mono">16-ap0xxx</td>
+                            <td><span class="status"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9.5l4 4 8-9" fill="none" stroke="#FFB01F" stroke-width="2.4" stroke-linecap="square"/></svg>Confirmed</span></td>
+                            <td class="mono">v0.1</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Victus 16</th>
+                            <td class="mono">16-r0xxx</td>
+                            <td><span class="status"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9.5l4 4 8-9" fill="none" stroke="#FFB01F" stroke-width="2.4" stroke-linecap="square"/></svg>Confirmed</span></td>
+                            <td class="mono">v0.1</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Victus 15</th>
+                            <td class="mono">15-fb0xxx</td>
+                            <td><span class="status"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9.5l4 4 8-9" fill="none" stroke="#FFB01F" stroke-width="2.4" stroke-linecap="square"/></svg>Confirmed</span></td>
+                            <td class="mono">v0.1</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">OMEN X 2S</th>
+                            <td class="mono"></td>
+                            <td><span class="status"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9.5l4 4 8-9" fill="none" stroke="#FFB01F" stroke-width="2.4" stroke-linecap="square"/></svg>Confirmed</span></td>
+                            <td class="mono">v0.1</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">OMEN 15</th>
+                            <td class="mono"></td>
+                            <td><span class="status"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9.5l4 4 8-9" fill="none" stroke="#FFB01F" stroke-width="2.4" stroke-linecap="square"/></svg>Confirmed</span></td>
+                            <td class="mono">v0.4</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">OMEN 16</th>
+                            <td class="mono"></td>
+                            <td><span class="status"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9.5l4 4 8-9" fill="none" stroke="#FFB01F" stroke-width="2.4" stroke-linecap="square"/></svg>Confirmed</span></td>
+                            <td class="mono">v0.1</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">OMEN 17</th>
+                            <td class="mono"></td>
+                            <td><span class="status"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9.5l4 4 8-9" fill="none" stroke="#FFB01F" stroke-width="2.4" stroke-linecap="square"/></svg>Confirmed</span></td>
+                            <td class="mono">v0.1</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section class="wrap releases" id="releases">
+            <div>
+                <div class="release-date">Latest release, 14 Nov 2026</div>
+                <div class="release-version">v0.4.3</div>
+            </div>
+            <div class="release-info">
+                <p>See what changed in this version and download the binary on GitHub.</p>
+                <div class="actions">
+                    <a class="btn btn-sm btn-red" href="https://github.com/openomen/openomen/releases/tag/CLI_0.4.3" target="_blank" rel="noopener">Read the release notes</a>
+                    <a href="https://github.com/openomen/openomen/releases" target="_blank" rel="noopener" style="font-weight:500">All releases</a>
+                </div>
+                <div class="up-next">
+                    <h3>Up next</h3>
+                    <ul>
+                        <li><span class="bolt" aria-hidden="true"></span> Manual fan curves</li>
+                        <li><span class="bolt" aria-hidden="true"></span> A graphical interface on top of the CLI</li>
+                        <li><span class="bolt" aria-hidden="true"></span> HP-WMI embedded controller support</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="wrap community" id="community">
+            <div class="cta">
+                <div class="cta-copy">
+                    <h2>Own one of these laptops? Tell us how it goes.</h2>
+                    <p>Report what works on your model, ask questions or send a fix. For bigger changes, open an issue first.</p>
+                </div>
+                <div class="actions">
+                    <a class="btn btn-red" href="https://discord.gg/UHQ5cztbUj" target="_blank" rel="noopener">Join the Discord</a>
+                    <a class="btn btn-line" href="https://github.com/openomen/openomen/issues" target="_blank" rel="noopener">Open an issue</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap">
+            <p>OpenOMEN is unofficial, not affiliated with HP, and licensed under GPL-3.0. It is provided as is, and you use it at your own risk. Made by audixdev (quin).</p>
+            <nav class="footer-nav" aria-label="Footer">
+                <a href="https://github.com/openomen/openomen" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://github.com/openomen/openomen/wiki" target="_blank" rel="noopener">Wiki</a>
+                <a href="https://discord.gg/UHQ5cztbUj" target="_blank" rel="noopener">Discord</a>
+            </nav>
         </div>
-    </section>
+    </footer>
 
-    <section class="section" id="features">
-        <h2>Features</h2>
-
-        <div class="card">
-            <h3>🌀 Fan Control</h3>
-            <p>Manual fan speed tuning and automated fan curves, including "FanBoost" mode for max cooling on demand.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>📊 Thermal Stats</h3>
-            <p>Monitor CPU/GPU temperatures, fan speeds, and system performance in real-time.</p>
-        </div>
-
-        <div class="card">
-            <h3>🎨 Partial RGB Support</h3>
-            <p>Control keyboard and chassis lighting on supported OMEN models <em><strong>AND</strong> some</em>
-                Victus
-                models with RGB keyboards.</p>
-        </div>
-
-        <div class="card">
-            <h3>⚡ Performance Profiles (Coming Soon)</h3>
-            <p>⚡ Switch between performance, balanced, and power-saving modes — for CPU and GPU — on the fly.</p>
-        </div>
-
-    </section>
-
-    <section class="section" id="install">
-        <h2>Installation</h2>
-        <p>Ubuntu 22.04+ & NixOS, Arch & CachyOS is currently supported.</p>
-        <div class="card">
-            <h3>Installation & Usage</h3>
-            <p>View the full instructions on our GitHub Wiki:</p>
-            <a href="https://github.com/openomen/openomen/wiki/%F0%9F%93%A6-Installation-&-Usage" target="_blank" style="
-    display: inline-block;
-    background: #e50914;
-    color: white;
-    padding: 0.6rem 1.2rem;
-    font-weight: bold;
-    border-radius: 6px;
-    text-decoration: none;
-    box-shadow: 0 0 10px rgba(229, 9, 20, 0.4);
-    margin-top: 0.5rem;
-  ">Open Installation Guide</a>
-        </div>
-    </section>
-
-    <section class="section" id="status">
-        <h2>Project Status</h2>
-        <div class="card">
-            <h3>Latest <em>un</em>Stable</h3>
-            <p><span class="badge">v0.4.0</span> – CPU and GPU stats, Fan modes, Partial RGB Support, Performance/Power profile and a built-in updater</p>
-        </div>
-        <div class="card">
-            <h3>Next steps</h3>
-            <p>Manual fan speed control, GUI and more.</p>
-        </div>
-    </section>
-
-    <div class="footer">
-        &copy; 2026 OpenOMEN • Not affiliated with HP • Made with ❤️ for Linux • Made by audixdev (quin)
-    </div>
+    <script>
+        (function () {
+            var btn = document.querySelector('.nav-toggle');
+            var nav = document.getElementById('primary-nav');
+            if (!btn || !nav) return;
+            function setOpen(open) {
+                btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+                nav.classList.toggle('open', open);
+            }
+            btn.addEventListener('click', function () {
+                setOpen(btn.getAttribute('aria-expanded') !== 'true');
+            });
+            nav.addEventListener('click', function (e) {
+                if (e.target.closest('a')) setOpen(false);
+            });
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') { setOpen(false); btn.focus(); }
+            });
+        })();
+    </script>
 
 </body>
 
