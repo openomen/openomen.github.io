@@ -1,0 +1,6 @@
+Archive: stable
+Component: main
+Origin: OpenOMEN
+Label: OpenOMEN
+Architecture: amd64
+Description: OpenOMEN APT repository

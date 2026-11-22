@@ -1,0 +1,13 @@
+Package: openomen
+Version: 0.5.1
+Architecture: amd64
+Maintainer: audixdev <audixdev@gmail.com>
+Priority: optional
+Section: utils
+Filename: pool/main/o/openomen/openomen_0.5.1_amd64.deb
+Size: 23584908
+SHA256: 68d4cdc8b76f691c109fb443226c6a1691619d693482ea576b62c15946801d95
+SHA1: 2a2c31c7b24558de205fd98e6ead249512a6763b
+MD5sum: be9081c053dd621355f57ad37636beb4
+Description: Unofficial driver and daemon for HP OMEN hardware on Linux.
+
