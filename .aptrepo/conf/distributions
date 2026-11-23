@@ -1,0 +1,8 @@
+Origin: OpenOMEN
+Label: OpenOMEN
+Suite: stable
+Codename: stable
+Architectures: amd64
+Components: main
+Description: OpenOMEN APT repository
+SignWith: A01C9FA1C77AA3C16A6B07586474718A7777B8F1

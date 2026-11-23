@@ -1,0 +1,20 @@
+Origin: OpenOMEN
+Label: OpenOMEN
+Suite: stable
+Codename: stable
+Date: Mon, 23 Nov 2026 18:58:17 UTC
+Architectures: amd64
+Components: main
+Description: OpenOMEN APT repository
+MD5Sum:
+ 56147e6a38489697aa1ab1d9fd256f6c 414 main/binary-amd64/Packages
+ 87beb346665219665eb9509335776da2 321 main/binary-amd64/Packages.gz
+ 0b8fce76818495d3186449bb9492b43f 122 main/binary-amd64/Release
+SHA1:
+ f0887a380ea3c3c8c92f06610ffa5b4606b2ec3c 414 main/binary-amd64/Packages
+ 3e3d0d6981ba4d0f269dd16d617032ed32bf709c 321 main/binary-amd64/Packages.gz
+ 92dccab1286a85beb5c129988522b63390e67104 122 main/binary-amd64/Release
+SHA256:
+ 5e31093d554c136fe40f2955d1a4e4310e7d0009748f488b812a1581301e6d0e 414 main/binary-amd64/Packages
+ 4e4278116d429b37066f029a16a8f1902633aa9046920a9ab419b7b86749cc63 321 main/binary-amd64/Packages.gz
+ 33cc70b6ef1d5ee1a19b08fb34477e9b8f08de5590612c267cd768f5aadf1c10 122 main/binary-amd64/Release

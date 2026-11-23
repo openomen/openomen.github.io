@@ -1,0 +1,39 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Origin: OpenOMEN
+Label: OpenOMEN
+Suite: stable
+Codename: stable
+Date: Mon, 23 Nov 2026 18:58:17 UTC
+Architectures: amd64
+Components: main
+Description: OpenOMEN APT repository
+MD5Sum:
+ 56147e6a38489697aa1ab1d9fd256f6c 414 main/binary-amd64/Packages
+ 87beb346665219665eb9509335776da2 321 main/binary-amd64/Packages.gz
+ 0b8fce76818495d3186449bb9492b43f 122 main/binary-amd64/Release
+SHA1:
+ f0887a380ea3c3c8c92f06610ffa5b4606b2ec3c 414 main/binary-amd64/Packages
+ 3e3d0d6981ba4d0f269dd16d617032ed32bf709c 321 main/binary-amd64/Packages.gz
+ 92dccab1286a85beb5c129988522b63390e67104 122 main/binary-amd64/Release
+SHA256:
+ 5e31093d554c136fe40f2955d1a4e4310e7d0009748f488b812a1581301e6d0e 414 main/binary-amd64/Packages
+ 4e4278116d429b37066f029a16a8f1902633aa9046920a9ab419b7b86749cc63 321 main/binary-amd64/Packages.gz
+ 33cc70b6ef1d5ee1a19b08fb34477e9b8f08de5590612c267cd768f5aadf1c10 122 main/binary-amd64/Release
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCgAdFiEEoByfocd6o8FqawdYZHRxind3uPEFAmsEjMkACgkQZHRxind3
+uPERig//WqGJ/j4Huomhi+QFah/9IjexaVZK1kAbAlz/U2ZDwLpu0QEpCHDl5FRf
+oAMOAW1gmITyK599WcISzJo6Yst+BC0AiEkBIErUd63muFSsz+rrAe8BZNh/qeNv
+NrhKLo51mhzn+GKHo9NDy1lEba9teWrQtKYEHcdsVrZMgPD7M6MpRRDOrATsfoNr
+n57QOFpprSDRGW2NzP5A6Em0NZw53nvvVX06xZXhdG99PNwWCJMNNkCN1zPbxk8w
+kurMV5fjH0BlQ0CrFjOff5pGRQL0lDMV8bPiGz171Sfrvg3Nf8M3X2usUYaIZf0b
+NBJ9/R0RC/1+iqwhB8l194QsC91FS3R0aGWWuRWxEOHEt276GJw7EEiG4sFZbo4M
+BsqAv4LXp3N8pcUlZkVT5S+Sajtpj/Nq27tNSek7T0Mfnjwj4zvAC/aEPPhTknMJ
+TPwTfy/iuKeGes5LR05pi7TNDK7+d73VP1T2phoQo4RKRp7prCpBkMuuXV6bcbjq
+WW0+rdpZl/eU1LVnbcbVWzI1wH9YBiSfS/UHc74UxIZkwNE0Lbwnds0U3J8bD2mE
+K9+oNwC90RTbPEgOUDfjhys78pBOjKrHrUwB7Imw3ZLwsIfh5oRWijDpAP9feF3h
+lr3ENaTTewAxLWwZ5YXhDgs68dkPpufojSJIITMwJ3GtSocq3e0=
+=jNsf
+-----END PGP SIGNATURE-----
